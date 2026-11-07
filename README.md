@@ -4,7 +4,11 @@ A PySide6 desktop app for Ubuntu. It shows which vibe-coding / IDE tools are pre
 
 The app is **read-only**. It never edits configs, installs or removes anything, or connects to MCP servers, and it never reads credential stores or app databases. Values from config files are never shown. To see or edit a file, use **Open File**, which opens it in your own editor.
 
+**Repository:** https://github.com/saintgermainlabs/ide-toolbox
+
 ## Install (one command, user-level, no sudo)
+
+Full details: [docs/INSTALLATION.md](docs/INSTALLATION.md).
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/saintgermainlabs/ide-toolbox/main/install.sh | bash
@@ -23,7 +27,7 @@ The installer:
 - Creates the app's own environment with [uv](https://docs.astral.sh/uv/). That step downloads Python 3.13 and the locked PySide6 wheels. If uv is missing, the installer first fetches it from the official `https://astral.sh/uv/install.sh`, or you can set `IDE_TOOLBOX_NO_UV_BOOTSTRAP=1` to stop instead.
 - Adds the command `~/.local/bin/ide-toolbox` and an "IDE Toolbox" app-menu launcher.
 
-It never uses sudo and doesn't start the app. Running it again updates the app. Options:
+It never uses sudo and doesn't start the app. Afterwards, start it with `ide-toolbox` (or `~/.local/bin/ide-toolbox`) or from the app menu. Running it again updates the app, and the previous install is restored if the update fails. Options:
 
 ```bash
 bash install.sh --help
